@@ -1,8 +1,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Pacifico&display=swap');
-h1 {
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header__title {
   color: red;
   font-family: 'Pacifico', cursive;
+}
+
+.header__tasks-count {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .input__text {
@@ -16,11 +28,6 @@ h1 {
   font-size: 25px;
   padding: 15px;
   text-transform: uppercase;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
 }
 
 .content {
