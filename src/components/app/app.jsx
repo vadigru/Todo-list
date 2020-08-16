@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "../header/header.jsx";
 import Main from "../main/main.jsx";
+import StoreLocal from "../../local-storage/local-storage.js";
+
+const storage = new StoreLocal(`tasks`);
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -15,22 +18,22 @@ class App extends React.PureComponent {
   }
 
   _handleTaskAdd(task) {
-    const newArr = [...this.state.tasks, task];
-    this.setState({tasks: newArr});
-    document.cookie = JSON.stringify(newArr);
+    const newTasks = [...this.state.tasks, task];
+    this.setState({tasks: newTasks});
+    storage.setItem(newTasks);
   }
 
   _handleTaskDelete(index) {
-    const newArr = [...this.state.tasks];
-    newArr.splice(index, 1);
-    this.setState({tasks: newArr});
-    document.cookie = JSON.stringify(newArr);
+    const updatedTasks = [...this.state.tasks];
+    updatedTasks.splice(index, 1);
+    this.setState({tasks: updatedTasks});
+    storage.setItem(updatedTasks);
   }
 
   componentDidMount() {
-    const allCookies = document.cookie;
-    if (allCookies) {
-      this.setState({tasks: JSON.parse(allCookies)});
+    const localTasks = storage.getAll();
+    if (localTasks) {
+      this.setState({tasks: localTasks});
     }
   }
 
