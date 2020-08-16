@@ -7,16 +7,42 @@ class App extends React.PureComponent {
     super(props);
 
     this.state = {
-      tasks: [`task 1`, `task 2`, `task 3`, `task 4`]
+      tasks: []
     };
 
+    this._handleTaskAdd = this._handleTaskAdd.bind(this);
+    this._handleTaskDelete = this._handleTaskDelete.bind(this);
+  }
+
+  _handleTaskAdd(task) {
+    const newArr = [...this.state.tasks, task];
+    this.setState({tasks: newArr});
+    document.cookie = JSON.stringify(newArr);
+  }
+
+  _handleTaskDelete(index) {
+    const newArr = [...this.state.tasks];
+    newArr.splice(index, 1);
+    this.setState({tasks: newArr});
+    document.cookie = JSON.stringify(newArr);
+  }
+
+  componentDidMount() {
+    const allCookies = document.cookie;
+    if (allCookies) {
+      this.setState({tasks: JSON.parse(allCookies)});
+    }
   }
 
   render() {
     return (
       <React.Fragment>
         <Header tasks={this.state.tasks}/>
-        <Main tasks={this.state.tasks}/>
+        <Main
+          tasks={this.state.tasks}
+          onSubmitButtonClick={this._handleTaskAdd}
+          onDeleteButtonClick={this._handleTaskDelete}
+        />
       </React.Fragment>
     );
   }

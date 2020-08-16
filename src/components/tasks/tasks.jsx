@@ -3,7 +3,10 @@ import Task from "../task/task.jsx";
 import PropTypes from "prop-types";
 
 const Tasks = (props) => {
-  const {tasks} = props;
+  const {
+    tasks,
+    onDeleteButtonClick
+  } = props;
 
   return (
     <ul className="tasks">
@@ -11,6 +14,7 @@ const Tasks = (props) => {
         <Task
           key={item + index}
           task={item}
+          onDeleteButtonClick={() => onDeleteButtonClick(index)}
         />
       ))}
     </ul>
@@ -20,7 +24,8 @@ const Tasks = (props) => {
 Tasks.propTypes = {
   tasks: PropTypes.arrayOf(
       PropTypes.string
-  ).isRequired
+  ).isRequired,
+  onDeleteButtonClick: PropTypes.func.isRequired
 };
 
 export default Tasks;

@@ -2,11 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Task = (props) => {
-  const {task} = props;
+  const {
+    task,
+    onDeleteButtonClick
+  } = props;
+
   return (
     <li className="tasks__item">
       {task}
-      <button className="tasks__delete">
+      <button className="tasks__delete" onClick={onDeleteButtonClick}>
         <img src="img/icons8-delete.svg" alt="delete" />
       </button>
     </li>
@@ -14,7 +18,8 @@ const Task = (props) => {
 };
 
 Task.propTypes = {
-  task: PropTypes.string.isRequired
+  task: PropTypes.string.isRequired,
+  onDeleteButtonClick: PropTypes.func.isRequired
 };
 
 export default Task;

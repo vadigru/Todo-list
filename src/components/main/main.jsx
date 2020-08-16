@@ -4,12 +4,20 @@ import Tasks from "../tasks/tasks.jsx";
 import PropTypes from "prop-types";
 
 const Main = (props) => {
-  const {tasks} = props;
+  const {
+    tasks,
+    onSubmitButtonClick,
+    onDeleteButtonClick
+  } = props;
+
   return (
     <main className="content">
       <div className="container">
-        <Form />
-        <Tasks tasks={tasks}/>
+        <Form onSubmitButtonClick={onSubmitButtonClick}/>
+        <Tasks
+          tasks={tasks}
+          onDeleteButtonClick={onDeleteButtonClick}
+        />
       </div>
     </main>
   );
@@ -18,7 +26,9 @@ const Main = (props) => {
 Main.propTypes = {
   tasks: PropTypes.arrayOf(
       PropTypes.string
-  ).isRequired
+  ).isRequired,
+  onSubmitButtonClick: PropTypes.func.isRequired,
+  onDeleteButtonClick: PropTypes.func.isRequired
 };
 
 export default Main;
