@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 const Main = (props) => {
   const {
     tasks,
+    onTaskClick,
     onSubmitButtonClick,
     onDeleteButtonClick
   } = props;
@@ -16,6 +17,7 @@ const Main = (props) => {
         <Form onSubmitButtonClick={onSubmitButtonClick}/>
         <Tasks
           tasks={tasks}
+          onTaskClick={onTaskClick}
           onDeleteButtonClick={onDeleteButtonClick}
         />
       </div>
@@ -25,8 +27,12 @@ const Main = (props) => {
 
 Main.propTypes = {
   tasks: PropTypes.arrayOf(
-      PropTypes.string
+      PropTypes.shape({
+        tasks: PropTypes.string,
+        isActive: PropTypes.bool
+      })
   ).isRequired,
+  onTaskClick: PropTypes.func.isRequired,
   onSubmitButtonClick: PropTypes.func.isRequired,
   onDeleteButtonClick: PropTypes.func.isRequired
 };

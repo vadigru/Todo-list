@@ -15,10 +15,11 @@ class App extends React.PureComponent {
 
     this._handleTaskAdd = this._handleTaskAdd.bind(this);
     this._handleTaskDelete = this._handleTaskDelete.bind(this);
+    this._handleTaskClick = this._handleTaskClick.bind(this);
   }
 
   _handleTaskAdd(task) {
-    const newTasks = [...this.state.tasks, task];
+    const newTasks = [...this.state.tasks, {task, isActive: true}];
     this.setState({tasks: newTasks});
     storage.setItem(newTasks);
   }
@@ -28,6 +29,14 @@ class App extends React.PureComponent {
     updatedTasks.splice(index, 1);
     this.setState({tasks: updatedTasks});
     storage.setItem(updatedTasks);
+  }
+
+  _handleTaskClick(item, index) {
+    const updatedTasks = [...this.state.tasks];
+    updatedTasks.splice(index, 1);
+    const newTask = Object.assign(item, {isActive: !this.state.tasks[index].isActive});
+    const newTasks = [...updatedTasks.slice(0, index), newTask, ...updatedTasks.slice(index)];
+    this.setState({tasks: newTasks});
   }
 
   componentDidMount() {
@@ -43,6 +52,7 @@ class App extends React.PureComponent {
         <Header tasks={this.state.tasks}/>
         <Main
           tasks={this.state.tasks}
+          onTaskClick={this._handleTaskClick}
           onSubmitButtonClick={this._handleTaskAdd}
           onDeleteButtonClick={this._handleTaskDelete}
         />

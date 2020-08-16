@@ -24,6 +24,7 @@ class Form extends React.PureComponent {
 
     onSubmitButtonClick(this.state.term);
     this.inputRef.current.value = ``;
+    this.setState({term: ``});
   }
 
   render() {
@@ -46,7 +47,7 @@ class Form extends React.PureComponent {
           type="submit"
           className="input__submit"
         >
-            add task
+          <img src="img/icons8-plus.svg" alt="add task" />
         </button>
       </form>
     );

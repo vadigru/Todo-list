@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 const Tasks = (props) => {
   const {
     tasks,
+    onTaskClick,
     onDeleteButtonClick
   } = props;
 
@@ -14,6 +15,7 @@ const Tasks = (props) => {
         <Task
           key={item + index}
           task={item}
+          onTaskClick={() => onTaskClick(item, index)}
           onDeleteButtonClick={() => onDeleteButtonClick(index)}
         />
       ))}
@@ -23,8 +25,12 @@ const Tasks = (props) => {
 
 Tasks.propTypes = {
   tasks: PropTypes.arrayOf(
-      PropTypes.string
+      PropTypes.shape({
+        tasks: PropTypes.string,
+        isActive: PropTypes.bool
+      })
   ).isRequired,
+  onTaskClick: PropTypes.func.isRequired,
   onDeleteButtonClick: PropTypes.func.isRequired
 };
 

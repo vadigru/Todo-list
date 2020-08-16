@@ -11,30 +11,37 @@
   <body>
     <header class="header">
       <h1 class="header__title">TODO</h1>
-      <h2 class="header__tasks-count">You have 3 task/s</h2>
+      <h2 class="header__tasks-count">You have 3 active task/s</h2>
     </header>
     <main class="content">
       <div class="container">
       <form class="input">
         <input type="text" class="input__text" placeholder="input task" id="input-task">
-        <label for="input-task"></label>
-        <button class="input__submit">add task</button>
+        <button type="submit" class="input__submit">
+          <img src="img/icons8-plus.svg" alt="add task">
+        </button>
       </form>
       <ul class="tasks">
         <li class="tasks__item">
-          Task 1
+          <span class="tasks__title">
+            Task 1
+          </span>
+          <button class="tasks__delete">
+            <img src="img/icons8-delete.svg" alt="delete">
+          </button>
+        </li>
+        <li class="tasks__item tasks__item--done">
+          <span class="tasks__title">
+            Task 22
+          </span>
           <button class="tasks__delete">
             <img src="img/icons8-delete.svg" alt="delete">
           </button>
         </li>
         <li class="tasks__item">
-          Task 22
-          <button class="tasks__delete">
-            <img src="img/icons8-delete.svg" alt="delete">
-          </button>
-        </li>
-        <li class="tasks__item">
-          Task 333
+          <span class="tasks__title">
+            надо попробовать ввести длинный текст
+          </span>
           <button class="tasks__delete">
             <img src="img/icons8-delete.svg" alt="delete">
           </button>
