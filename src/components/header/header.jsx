@@ -7,7 +7,7 @@ const Header = (props) => {
   return (
     <header className="header">
       <h1 className="header__title">TODO</h1>
-      <h2 className="header__tasks-count">You have {activeTasks.length} task/s</h2>
+      <h2 className="header__tasks-count">You have {activeTasks.length} active task/s</h2>
     </header>
   );
 };

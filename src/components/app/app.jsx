@@ -37,6 +37,7 @@ class App extends React.PureComponent {
     const newTask = Object.assign(item, {isActive: !this.state.tasks[index].isActive});
     const newTasks = [...updatedTasks.slice(0, index), newTask, ...updatedTasks.slice(index)];
     this.setState({tasks: newTasks});
+    storage.setItem(newTasks);
   }
 
   componentDidMount() {
