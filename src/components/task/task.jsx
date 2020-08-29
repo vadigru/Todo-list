@@ -10,7 +10,8 @@ const Task = (props) => {
 
   return (
     <li className={`tasks__item ${task.isActive ? `` : `tasks__item--done`}`}>
-      <span className="tasks__title" onClick={onTaskClick}>
+      <input type="checkbox" defaultChecked={!task.isActive} onClick={onTaskClick}/>
+      <span className="tasks__title" >
         {task.task}
       </span>
       <button className="tasks__delete" onClick={onDeleteButtonClick}>
