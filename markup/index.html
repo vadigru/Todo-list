@@ -11,39 +11,45 @@
   <body>
     <header class="header">
       <h1 class="header__title">TODO</h1>
-      <h2 class="header__tasks-count">You have 3 active task/s</h2>
+      <h2 class="header__tasks-count">You have 2 active task/s</h2>
     </header>
     <main class="content">
       <div class="container">
       <form class="input">
-        <input type="text" class="input__text" placeholder="input task" id="input-task">
+        <input type="text" class="input__text" placeholder="input task" id="input-task" autocomplete="off">
         <button type="submit" class="input__submit">
           <img src="img/icons8-plus.svg" alt="add task">
         </button>
       </form>
       <ul class="tasks">
         <li class="tasks__item">
-          <input type="checkbox">
+          <button class="tasks__check">
+            <img src="img/checkbox-unchecked.svg" />
+          </button>
           <span class="tasks__title">
-            Task 1
+            Catch the Bird of Happiness
           </span>
           <button class="tasks__delete">
             <img src="img/icons8-delete.svg" alt="delete">
           </button>
         </li>
         <li class="tasks__item tasks__item--done">
-          <input type="checkbox" checked>
+          <button class="tasks__check">
+            <img src="img/checkbox-checked.svg" />
+          </button>
           <span class="tasks__title">
-            Task 22
+            Find the Right Way
           </span>
           <button class="tasks__delete">
             <img src="img/icons8-delete.svg" alt="delete">
           </button>
         </li>
         <li class="tasks__item">
-          <input type="checkbox">
+          <button  class="tasks__check">
+            <img src="img/checkbox-unchecked.svg" />
+          </button>
           <span class="tasks__title">
-            надо попробовать ввести длинный текст
+            Knockin'on Heaven
           </span>
           <button class="tasks__delete">
             <img src="img/icons8-delete.svg" alt="delete">

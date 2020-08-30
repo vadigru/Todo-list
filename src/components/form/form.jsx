@@ -35,6 +35,7 @@ class Form extends React.PureComponent {
         onSubmit={(evt) => this._handleSubmit(evt)}
       >
         <input
+          autoComplete="off"
           type="text"
           className="input__text"
           placeholder="input task"

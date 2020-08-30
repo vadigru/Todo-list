@@ -8,7 +8,8 @@ const Main = (props) => {
     tasks,
     onTaskClick,
     onSubmitButtonClick,
-    onDeleteButtonClick
+    onDeleteButtonClick,
+    onDropUpdate
   } = props;
 
   return (
@@ -19,6 +20,7 @@ const Main = (props) => {
           tasks={tasks}
           onTaskClick={onTaskClick}
           onDeleteButtonClick={onDeleteButtonClick}
+          onDropUpdate={onDropUpdate}
         />
       </div>
     </main>
@@ -34,7 +36,8 @@ Main.propTypes = {
   ).isRequired,
   onTaskClick: PropTypes.func.isRequired,
   onSubmitButtonClick: PropTypes.func.isRequired,
-  onDeleteButtonClick: PropTypes.func.isRequired
+  onDeleteButtonClick: PropTypes.func.isRequired,
+  onDropUpdate: PropTypes.func.isRequired
 };
 
 export default Main;

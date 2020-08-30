@@ -1,6 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Pacifico&display=swap');
 
+body {
+  background-color: whitesmoke;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -56,10 +68,12 @@
 }
 
 .tasks__item {
+  position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   border: 1px solid grey;
-  margin: 2px 0;
+  background-color: white;
+  margin: 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,8 +81,8 @@
 }
 
 .tasks__item--done {
-  color: #888888;
-  background-color: lightgray;
+  color: #cccccc;
+  background-color:lightgoldenrodyellow;
   text-decoration: line-through;
 }
 
@@ -82,12 +96,14 @@
   cursor: default;
 }
 
+.tasks__check,
 .tasks__delete {
   background: none;
   border: none;
   padding: 16px;
 }
 
+.tasks__check img,
 .tasks__delete img {
   width: 25px;
   height: 25px;

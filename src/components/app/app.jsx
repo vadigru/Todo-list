@@ -16,6 +16,7 @@ class App extends React.PureComponent {
     this._handleTaskAdd = this._handleTaskAdd.bind(this);
     this._handleTaskDelete = this._handleTaskDelete.bind(this);
     this._handleTaskClick = this._handleTaskClick.bind(this);
+    this._handleUpdateState = this._handleUpdateState.bind(this);
   }
 
   _handleTaskAdd(task) {
@@ -40,6 +41,11 @@ class App extends React.PureComponent {
     storage.setItem(newTasks);
   }
 
+  _handleUpdateState(tasks) {
+    this.setState({tasks});
+    storage.setItem(tasks);
+  }
+
   componentDidMount() {
     const localTasks = storage.getAll();
     if (localTasks) {
@@ -56,6 +62,7 @@ class App extends React.PureComponent {
           onTaskClick={this._handleTaskClick}
           onSubmitButtonClick={this._handleTaskAdd}
           onDeleteButtonClick={this._handleTaskDelete}
+          onDropUpdate={this._handleUpdateState}
         />
       </React.Fragment>
     );
