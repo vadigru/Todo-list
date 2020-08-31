@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render App component 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <h1
+      className="header__title"
+    >
+      TODO
+    </h1>
+    <h2
+      className="header__tasks-count"
+    >
+      You have 
+      0
+       active task/s
+    </h2>
+  </header>,
+  <main
+    className="content"
+  >
+    <div
+      className="container"
+    >
+      <form
+        className="input"
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="input__text"
+          id="input-task"
+          onChange={[Function]}
+          placeholder="input task"
+          type="text"
+          value=""
+        />
+        <label
+          htmlFor="input-task"
+        />
+        <button
+          className="input__submit"
+          type="submit"
+        >
+          <img
+            alt="add task"
+            src="img/icons8-plus.svg"
+          />
+        </button>
+      </form>
+      <ul
+        className="tasks"
+        data-rbd-droppable-context-id="0"
+        data-rbd-droppable-id="dp1"
+      />
+    </div>
+  </main>,
+]
+`;

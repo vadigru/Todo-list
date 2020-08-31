@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Form component 1`] = `
+<form
+  className="input"
+  onSubmit={[Function]}
+>
+  <input
+    autoComplete="off"
+    className="input__text"
+    id="input-task"
+    onChange={[Function]}
+    placeholder="input task"
+    type="text"
+    value=""
+  />
+  <label
+    htmlFor="input-task"
+  />
+  <button
+    className="input__submit"
+    type="submit"
+  >
+    <img
+      alt="add task"
+      src="img/icons8-plus.svg"
+    />
+  </button>
+</form>
+`;

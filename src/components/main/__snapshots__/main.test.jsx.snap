@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Main component 1`] = `
+<main
+  className="content"
+>
+  <div
+    className="container"
+  >
+    <form
+      className="input"
+      onSubmit={[Function]}
+    >
+      <input
+        autoComplete="off"
+        className="input__text"
+        id="input-task"
+        onChange={[Function]}
+        placeholder="input task"
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="input-task"
+      />
+      <button
+        className="input__submit"
+        type="submit"
+      >
+        <img
+          alt="add task"
+          src="img/icons8-plus.svg"
+        />
+      </button>
+    </form>
+    <ul
+      className="tasks"
+      data-rbd-droppable-context-id="0"
+      data-rbd-droppable-id="dp1"
+    >
+      <li
+        aria-describedby="rbd-hidden-text-0-hidden-text-0"
+        className="tasks__item "
+        data-rbd-drag-handle-context-id="0"
+        data-rbd-drag-handle-draggable-id="0"
+        data-rbd-draggable-context-id="0"
+        data-rbd-draggable-id="0"
+        draggable={false}
+        onDragStart={[Function]}
+        onTransitionEnd={null}
+        role="button"
+        style={
+          Object {
+            "transform": null,
+            "transition": null,
+          }
+        }
+        tabIndex={0}
+      >
+        <button
+          className="tasks__check"
+          onClick={[Function]}
+        >
+          <img
+            alt="unchecked"
+            src="img/checkbox-unchecked.svg"
+          />
+        </button>
+        <span
+          className="tasks__title"
+        >
+          Task 1
+        </span>
+        <button
+          className="tasks__delete"
+          onClick={[Function]}
+        >
+          <img
+            alt="delete"
+            src="img/icons8-delete.svg"
+          />
+        </button>
+      </li>
+      <li
+        aria-describedby="rbd-hidden-text-0-hidden-text-0"
+        className="tasks__item "
+        data-rbd-drag-handle-context-id="0"
+        data-rbd-drag-handle-draggable-id="1"
+        data-rbd-draggable-context-id="0"
+        data-rbd-draggable-id="1"
+        draggable={false}
+        onDragStart={[Function]}
+        onTransitionEnd={null}
+        role="button"
+        style={
+          Object {
+            "transform": null,
+            "transition": null,
+          }
+        }
+        tabIndex={0}
+      >
+        <button
+          className="tasks__check"
+          onClick={[Function]}
+        >
+          <img
+            alt="unchecked"
+            src="img/checkbox-unchecked.svg"
+          />
+        </button>
+        <span
+          className="tasks__title"
+        >
+          Task 2
+        </span>
+        <button
+          className="tasks__delete"
+          onClick={[Function]}
+        >
+          <img
+            alt="delete"
+            src="img/icons8-delete.svg"
+          />
+        </button>
+      </li>
+    </ul>
+  </div>
+</main>
+`;
